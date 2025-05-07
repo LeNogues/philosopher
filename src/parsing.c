@@ -6,7 +6,7 @@
 /*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 10:37:11 by seb               #+#    #+#             */
-/*   Updated: 2025/05/07 13:57:49 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/07 14:42:46 by seb              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ int verif_arg(int argc, char **argv, t_arg *arg)
     if (is_numeric(argv) == 0)
         return (0);
     arg->nb_philo = ft_atoi(argv[1]);
-    arg->time_to_eat = ft_atoi(argv[2]);
-    arg->time_to_die = ft_atoi(argv[3]);
+    arg->time_to_die = ft_atoi(argv[2]);
+    arg->time_to_eat = ft_atoi(argv[3]);
     arg->time_to_sleep = ft_atoi(argv[4]);
     arg->should_stop = 0;
     if (argv[5])
