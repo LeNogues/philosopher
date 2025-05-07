@@ -6,7 +6,7 @@
 /*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 14:16:24 by seb               #+#    #+#             */
-/*   Updated: 2025/05/07 14:44:24 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/07 14:58:22 by seb              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@ void    *philosopher_routine(void *argument)
     t_philo *me;
 
     me = (t_philo *)argument;
+    if (me->arg->nb_philo == 1)
+    {
+        print_status(me->arg, me->id, "has taken a fork");
+        usleep(me->arg->time_to_die * 1000);
+        stop_simulation(me->arg, me);
+        return (NULL);
+    }
     while(1)
     {
         if(is_dead(me))
