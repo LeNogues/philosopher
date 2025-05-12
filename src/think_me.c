@@ -6,13 +6,13 @@
 /*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 11:26:46 by seb               #+#    #+#             */
-/*   Updated: 2025/05/05 14:05:13 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/11 13:52:22 by seb              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
 
-void   think_me(t_philo *philo)
+void	think_me(t_philo *philo)
 {
-    print_status(philo->arg, philo->id, "is thinking");
+	print_status(philo->arg, philo->id, "is thinking");
 }

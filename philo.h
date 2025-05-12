@@ -6,7 +6,7 @@
 /*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 17:40:32 by seb               #+#    #+#             */
-/*   Updated: 2025/05/07 13:58:18 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/11 15:56:52 by seb              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,32 +32,34 @@
 
 typedef struct  s_arg
 {
-	int nb_philo;
-	int time_to_die;
-	int time_to_eat;
-	int time_to_sleep;
-	int infinite;
-	int nb_time_eat;
-	int	should_stop;
-	pthread_mutex_t stop_lock;
-	pthread_mutex_t write_lock;	
-	unsigned long start_time;
+	int				nb_philo;
+	int				time_to_die;
+	int				time_to_eat;
+	int				time_to_sleep;
+	int				infinite;
+	int				nb_time_eat;
+	int				should_stop;
+	int				philos_finished_eating;
+	pthread_mutex_t	stop_lock;
+	pthread_mutex_t	write_lock;	
+	pthread_mutex_t	meal_lock;	
+	unsigned long	start_time;
 }               t_arg;
 
 typedef struct s_fork
 {
-	pthread_mutex_t lock;
-	int             id;
+	pthread_mutex_t	lock;
+	int				id;
 }              t_fork;
 
 typedef struct  s_philo
 {
-	int             id;
-	t_fork          *right_fork;
-	t_fork          *left_fork;
-	t_arg           *arg;
-	unsigned long   last_meal;
-	int             time_eaten;
+	int				id;
+	t_fork			*right_fork;
+	t_fork			*left_fork;
+	t_arg			*arg;
+	unsigned long	last_meal;
+	int				time_eaten;
 }               t_philo;
 
 
@@ -136,6 +138,11 @@ int stop_simulation(t_arg *arg, t_philo *philo);
 
 //ft_atoi.c
 int	ft_atoi(const char *nptr);
+///////////////////////////////////////////////////////////////////////////////
+
+
+//check_meal.c
+void check_meal(t_arg *arg);
 ///////////////////////////////////////////////////////////////////////////////
 
 #endif

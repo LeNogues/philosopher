@@ -6,14 +6,14 @@
 /*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 12:00:03 by seb               #+#    #+#             */
-/*   Updated: 2025/05/05 14:04:10 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/11 13:52:08 by seb              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
 
-void    sleep_me(t_philo *philo)
+void	sleep_me(t_philo *philo)
 {
-    print_status(philo->arg, philo->id, "is sleeping");
-    usleep(philo->arg->time_to_sleep * 1000);
+	print_status(philo->arg, philo->id, "is sleeping");
+	usleep(philo->arg->time_to_sleep * 1000);
 }
