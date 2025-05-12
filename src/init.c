@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 10:41:42 by seb               #+#    #+#             */
-/*   Updated: 2025/05/11 14:11:13 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/12 15:36:20 by sle-nogu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,6 @@ int	init(t_arg *arg, t_philo **philo, t_fork **fork)
 	int	i;
 
 	i = 0;
-	*philo = malloc(sizeof(t_philo) * arg->nb_philo);
-	if (!*philo)
-		return (0);
 	*fork = malloc(sizeof(t_fork) * arg->nb_philo);
 	if (!*fork)
 		return (free(*philo), 0);

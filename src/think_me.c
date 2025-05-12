@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   think_me.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 11:26:46 by seb               #+#    #+#             */
-/*   Updated: 2025/05/11 13:52:22 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/12 18:43:46 by sle-nogu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,5 @@
 void	think_me(t_philo *philo)
 {
 	print_status(philo->arg, philo->id, "is thinking");
+	usleep(10);
 }

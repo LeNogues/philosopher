@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 17:40:32 by seb               #+#    #+#             */
-/*   Updated: 2025/05/11 15:56:52 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/12 16:06:28 by sle-nogu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int 				create_thread(t_arg *arg, t_philo *philo, pthread_t *thread_ids);
 ///////////////////////////////////////////////////////////////////////////////
 
 //free.c
-void    free_all(t_arg *arg, t_philo *philo, t_fork *fork, pthread_t *threads_ids);
+void    free_all(t_arg *arg, t_philo **phil, t_fork *fork, pthread_t *thread_id);
 ///////////////////////////////////////////////////////////////////////////////
 
 //destroy_mutex.c
@@ -116,7 +116,7 @@ void    sleep_me(t_philo *philo);
 ///////////////////////////////////////////////////////////////////////////////
 
 //eat.me
-void    eat_me(t_philo *philo);
+int    eat_me(t_philo *philo);
 ///////////////////////////////////////////////////////////////////////////////
 
 //print_status.c

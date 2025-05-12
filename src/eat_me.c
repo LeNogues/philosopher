@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   eat_me.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 13:51:24 by seb               #+#    #+#             */
-/*   Updated: 2025/05/11 17:47:00 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/12 15:16:08 by sle-nogu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
 
-void	eat_me(t_philo *philo)
+int	eat_me(t_philo *philo)
 {
 	take_fork(philo);
+	if (!check_simulation_continue(philo->arg))
+		return (0) ;
 	print_status(philo->arg, philo->id, "is eating");
 	philo->last_meal = get_current_time_ms();
 	philo->time_eaten++;
@@ -22,4 +24,5 @@ void	eat_me(t_philo *philo)
 		check_meal(philo->arg);
 	usleep(philo->arg->time_to_eat * 1000);
 	drop_fork(philo);
+	return (1);
 }
