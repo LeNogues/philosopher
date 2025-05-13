@@ -6,7 +6,7 @@
 /*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 17:40:15 by seb               #+#    #+#             */
-/*   Updated: 2025/05/12 19:23:52 by sle-nogu         ###   ########.fr       */
+/*   Updated: 2025/05/13 12:27:51 by sle-nogu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	main(int argc, char **argv)
 			pthread_mutex_lock(&arg->stop_lock);
 			arg->should_stop = 1;
 			pthread_mutex_unlock(&arg->stop_lock);
+			usleep(1000);
 		}
 	}
 
