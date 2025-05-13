@@ -20,7 +20,8 @@ SRC=    main.c \
 		src/take_and_drop.c \
 		src/is_dead.c \
 		src/stop_simulation.c \
-		src/check_meal.c
+		src/check_meal.c \
+		src/ft_strncmp.c
 		
 OBJ_DIR=obj
 OBJS=$(SRC:%.c=$(OBJ_DIR)/%.o)
