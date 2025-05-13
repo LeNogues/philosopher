@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 10:41:42 by seb               #+#    #+#             */
-/*   Updated: 2025/05/11 14:11:13 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/13 12:57:51 by sle-nogu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	setup_philo_and_forks(t_arg *arg, t_philo *philo, t_fork *fork, int i)
 	philo[i].right_fork = &fork[(i + 1) % arg->nb_philo];
 	philo[i].time_eaten = 0;
 	philo[i].last_meal = arg->start_time;
+	philo[i].left_fork->status = 1;
+	philo[i].right_fork->status = 1;
 	return (1);
 }
 

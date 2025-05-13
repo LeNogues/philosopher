@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 14:16:24 by seb               #+#    #+#             */
-/*   Updated: 2025/05/11 14:05:30 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/13 13:19:36 by sle-nogu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,13 @@ void	*philosopher_routine(void *argument)
 		stop_simulation(me->arg, me);
 		return (NULL);
 	}
+	if (me->id % 2 != 0)
+		usleep(me->arg->time_to_eat / 2 * 1000);
 	while (1)
 	{
+		if (!check_simulation_continue(me->arg))
+			break ;
+		think_me(me);
 		if (is_dead(me))
 			break ;
 		if (!check_simulation_continue(me->arg))
@@ -34,9 +39,7 @@ void	*philosopher_routine(void *argument)
 		if (!check_simulation_continue(me->arg))
 			break ;
 		sleep_me(me);
-		if (!check_simulation_continue(me->arg))
-			break ;
-		think_me(me);
+
 	}
 	return (NULL);
 }

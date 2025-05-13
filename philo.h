@@ -6,12 +6,19 @@
 /*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 17:40:32 by seb               #+#    #+#             */
-/*   Updated: 2025/05/13 12:44:01 by sle-nogu         ###   ########.fr       */
+/*   Updated: 2025/05/13 12:50:40 by sle-nogu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
+
+# ifndef RIGHT
+#  define RIGHT = 1
+# endif
+# ifndef LEFT
+#  define LEFT = 1
+# endif
 
 # include <pthread.h>
 # include <dirent.h>
