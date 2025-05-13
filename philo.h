@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 17:40:32 by seb               #+#    #+#             */
-/*   Updated: 2025/05/11 15:56:52 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/13 12:44:01 by sle-nogu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct s_fork
 {
 	pthread_mutex_t	lock;
 	int				id;
+	int				status;
 }              t_fork;
 
 typedef struct  s_philo
