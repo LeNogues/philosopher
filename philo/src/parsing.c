@@ -6,7 +6,7 @@
 /*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 10:37:11 by seb               #+#    #+#             */
-/*   Updated: 2025/05/11 14:04:48 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/13 17:20:20 by seb              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int	verif_arg(int argc, char **argv, t_arg *arg)
 	arg->time_to_eat = ft_atoi(argv[3]);
 	arg->time_to_sleep = ft_atoi(argv[4]);
 	arg->should_stop = 0;
+	arg->philos_finished_eating = 0;
 	if (argv[5])
 	{
 		arg->infinite = 0;
