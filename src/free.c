@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:02:27 by seb               #+#    #+#             */
-/*   Updated: 2025/05/12 19:23:44 by sle-nogu         ###   ########.fr       */
+/*   Updated: 2025/05/13 15:39:26 by seb              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	free_all(t_arg *arg, t_philo **phil, t_fork *fork, pthread_t *thread_id)
 	free_tab(phil);
 	if (arg)
 		free(arg);
-	if (thread_id)
-		free(thread_id);
+	(void)thread_id;
+	// if (thread_id)
+	// 	free(thread_id);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 14:16:24 by seb               #+#    #+#             */
-/*   Updated: 2025/05/13 12:11:14 by sle-nogu         ###   ########.fr       */
+/*   Updated: 2025/05/13 15:40:05 by seb              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	*philosopher_routine(void *argument)
 		if (!check_simulation_continue(me->arg))
 			break ;
 		sleep_me(me);
-
 	}
 	return (NULL);
 }
