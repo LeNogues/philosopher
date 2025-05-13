@@ -6,7 +6,7 @@
 /*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 13:51:24 by seb               #+#    #+#             */
-/*   Updated: 2025/05/12 15:16:08 by sle-nogu         ###   ########.fr       */
+/*   Updated: 2025/05/13 11:58:31 by sle-nogu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	eat_me(t_philo *philo)
 {
 	take_fork(philo);
 	if (!check_simulation_continue(philo->arg))
-		return (0) ;
+		return (0);
 	print_status(philo->arg, philo->id, "is eating");
 	philo->last_meal = get_current_time_ms();
 	philo->time_eaten++;
