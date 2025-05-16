@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 17:40:15 by seb               #+#    #+#             */
-/*   Updated: 2025/05/11 15:54:51 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/16 12:35:35 by sle-nogu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	if (!arg)
 		return (-1);
 	if (!verif_arg(argc, argv, arg))
-		return (printf("bad arguments\n"), -1);
+		return (free(arg), printf("bad arguments\n"), -1);
 	arg->start_time = get_current_time_ms();
 	if (!init(arg, &philo, &fork))
 		return (free(arg), -1);

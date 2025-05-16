@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   take_and_drop.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 14:20:50 by seb               #+#    #+#             */
-/*   Updated: 2025/05/13 16:11:07 by seb              ###   ########.fr       */
+/*   Updated: 2025/05/16 13:56:11 by sle-nogu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_trylock(pthread_mutex_t *lock, t_philo *philo, t_fork *fork)
 		pthread_mutex_unlock(lock);
 		if (is_dead(philo))
 			return (0);
-		usleep(30);
+		usleep(500);
 	}
 	return (1);
 }

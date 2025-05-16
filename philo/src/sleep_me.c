@@ -6,7 +6,7 @@
 /*   By: sle-nogu <sle-nogu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 12:00:03 by seb               #+#    #+#             */
-/*   Updated: 2025/05/15 10:39:31 by sle-nogu         ###   ########.fr       */
+/*   Updated: 2025/05/16 14:14:26 by sle-nogu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,26 @@
 
 int	sleep_me(t_philo *philo)
 {
-	int	time_sleeped;
+	unsigned long	start_sleep;
+	unsigned long	time_to_sleep;
 
-	time_sleeped = 0;
+	start_sleep = get_current_time_ms();
+	time_to_sleep = philo->arg->time_to_sleep;
 	print_status(philo->arg, philo->id, "is sleeping");
-	while (time_sleeped < philo->arg->time_to_sleep)
+	while (get_current_time_ms() < start_sleep + time_to_sleep)
 	{
-		usleep(5 * 1000);
-		time_sleeped += 5;
-		if (is_dead(philo))
-			return (0);
+		if (get_current_time_ms() < start_sleep + time_to_sleep - 10)
+		{
+			usleep(10000);
+			if (is_dead(philo))
+				return (0);
+		}
+		else
+		{
+			usleep(get_current_time_ms() - start_sleep + time_to_sleep);
+			if (is_dead(philo))
+				return (0);
+		}
 	}
 	return (1);
 }
